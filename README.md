@@ -41,7 +41,7 @@ Claude 查不到中文键就回落到英文原文，于是这些缺口就明晃�
 
 ### 1. 下载
 
-去 [Releases](../../releases/latest) 下载 `Claude-Desktop-中文化补丁.zip`（约 1.9 MB）。
+去 [Releases](../../releases/latest) 下载 `Claude-Desktop-zh-CN-Patch.zip`（约 1.9 MB）。
 
 > **上游汉化包已经打包在里面了**，全程不需要联网，不需要自己再去下载别的东西。
 
