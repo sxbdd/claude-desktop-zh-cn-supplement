@@ -1,0 +1,10 @@
+# 翻译过程中间产物与本地缓存
+__pycache__/
+*.pyc
+jobs/
+
+# 打包出来的 zip 走 GitHub Release，不进仓库
+release/*.zip
+
+# 应用文件的备份
+*.bak-supplement

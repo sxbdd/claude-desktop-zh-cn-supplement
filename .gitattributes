@@ -1,0 +1,11 @@
+# 默认按文本处理，检出为 LF（这条必须在最前面，后面的规则才能覆盖它）
+* text=auto eol=lf
+
+# Windows 批处理与 PowerShell 必须 CRLF，
+# 否则 cmd.exe 解析 goto/标签会出错
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# macOS / Unix 脚本保持 LF
+*.command text eol=lf
+*.sh      text eol=lf
