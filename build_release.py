@@ -98,6 +98,14 @@ def make_zip():
     print("打包完成：%d 个文件，%.2f MB" % (n, os.path.getsize(ZIP) / 1024 / 1024))
     if bad:
         print("！中文名未标 UTF-8，解压会乱码：%s" % bad)
+
+    # 再复制一份 ASCII 文件名的副本，专供 GitHub Release 上传：
+    # gh CLI 会把中文附件名截断，实测 "Claude-Desktop-中文化补丁.zip"
+    # 上传后变成了 "Claude-Desktop-.zip"。zip 内部的目录名仍是中文，不受影响。
+    ascii_zip = os.path.join(os.path.dirname(ZIP), "Claude-Desktop-zh-CN-Patch.zip")
+    shutil.copy2(ZIP, ascii_zip)
+    print("发布用副本：%s（%.2f MB）"
+          % (os.path.basename(ascii_zip), os.path.getsize(ascii_zip) / 1024 / 1024))
     return 0 if not bad else 1
 
 
